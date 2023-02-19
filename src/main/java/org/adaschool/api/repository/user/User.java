@@ -13,6 +13,15 @@ public class User {
     private String email;
     private String passwordHash;
 
+    public User(){
+        this.id ="";
+        this.name ="";
+        this.lastName ="";
+        this.email ="";
+        this.passwordHash ="";
+        this.createdAt = null;
+    }
+
     public User(String id, String name, String lastName, String email, String password) {
         this.id = id;
         this.name = name;
