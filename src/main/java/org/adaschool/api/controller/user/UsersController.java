@@ -2,6 +2,7 @@ package org.adaschool.api.controller.user;
 
 import org.adaschool.api.exception.UserNotFoundException;
 import org.adaschool.api.repository.user.User;
+import org.adaschool.api.repository.user.UserDto;
 import org.adaschool.api.service.user.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -46,7 +47,7 @@ public class UsersController {
     }
 
     @PutMapping("{id}")
-    public ResponseEntity<User> updateUser(@PathVariable("id") String id, @RequestBody User user) {
+    public ResponseEntity<User> updateUser(@PathVariable("id") String id, @RequestBody UserDto user) {
         Optional<User> userResponse = usersService.findById(id);
         if (userResponse.isPresent()){
             usersService.save(userResponse.get());
